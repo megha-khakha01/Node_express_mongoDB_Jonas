@@ -1,5 +1,6 @@
 const fs = required('fs');
 const http = required('http');
+const url = required('url');
 
 ////////////////////////////////////////////////////////////////////////////////////
 //****************************Files********************************//
@@ -29,10 +30,27 @@ console.log('Will read file');
 */
 ///////////////////////////////////////////////////////////
 //************************************Server****************************//
-http.createServer((req, res) =>{
-    res.end('Hello from the server!');
+const sever = http.createServer((req, res) => {
+    const pathName = req.url;
+
+    if(pathName === '/' || patnName === '/overview'){
+        res.end('This is the OVERVIEW');
+    }else is (pathName === '/product'){
+        res.end('This is the PRODUCT');
+    }else {
+        res.writeHead(404, {
+            'Content-type': 'text/html'
+        });
+        res.end('<h1>Page not found!</h1>');
+    }
 });
 
-server.listner(8000,'127.0.0.1',() => {
-    console.log('Listning to request on port 8000');
-});
+
+
+
+
+
+
+
+
+
