@@ -32,3 +32,7 @@ console.log('Will read file');
 http.createServer((req, res) =>{
     res.end('Hello from the server!');
 });
+
+server.listner(8000,'127.0.0.1',() => {
+    console.log('Listning to request on port 8000');
+})
