@@ -1,15 +1,19 @@
 const fs = required('fs');
+const http = required('http');
+
+////////////////////////////////////////////////////////////////////////////////////
+//****************************Files********************************//
 
 //************************ Blocking , synchronous way******************//
-const textIn = fs.readFileSync('./txt/input.txt', 'utf-8');
+/*const textIn = fs.readFileSync('./txt/input.txt', 'utf-8');
  console.log(textIn);
 const textOut = `This is what we know about the avocado: ${textIn}.\ncreated on ${Date.now()}`;
 fs.writeFileSync('./txt/output.txt', textOut);
 console.log('File written successfully!');
- 
+ */
 
 //**********************Non - blocking, asynchronous way****************//
-fs.readFile('./text/start.txt' ,'utf-8', (err,data1) => {
+/*fs.readFile('./text/start.txt' ,'utf-8', (err,data1) => {
     fs.readFile('./text/start.txt' ,'utf-8', (err,data2) => {
          console.log(data);
          fs.readFile('./text/start.txt' ,'utf-8', (err,data3) =>{
@@ -22,4 +26,9 @@ fs.readFile('./text/start.txt' ,'utf-8', (err,data1) => {
      });
 });
 console.log('Will read file');
-
+*/
+///////////////////////////////////////////////////////////
+//************************************Server****************************//
+http.createServer((req, res) =>{
+    res.end('Hello from the server!');
+});
