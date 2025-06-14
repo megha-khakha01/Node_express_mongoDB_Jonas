@@ -35,17 +35,20 @@ const sever = http.createServer((req, res) => {
 
     if(pathName === '/' || patnName === '/overview'){
         res.end('This is the OVERVIEW');
-    }else is (pathName === '/product'){
+    }else if (pathName === '/product'){
         res.end('This is the PRODUCT');
     }else {
         res.writeHead(404, {
             'Content-type': 'text/html'
+            'my-own-header': 'hello-world'
         });
         res.end('<h1>Page not found!</h1>');
     }
 });
 
-
+server.listner(8000.'127.0.0.1', () => {
+    console.log('Listening to requests on port 8000');
+});
 
 
 
