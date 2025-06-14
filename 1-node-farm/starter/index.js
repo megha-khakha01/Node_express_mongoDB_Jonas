@@ -30,6 +30,14 @@ console.log('Will read file');
 */
 ///////////////////////////////////////////////////////////
 //************************************Server****************************//
+
+
+
+const data = fs.readFileSync('${__dirname}/dev-data/data.json', 'utf-8');
+ const dataObj = JSON.parse(data);
+        
+
+
 const sever = http.createServer((req, res) => {
     const pathName = req.url;
 
@@ -37,7 +45,14 @@ const sever = http.createServer((req, res) => {
         res.end('This is the OVERVIEW');
     }else if (pathName === '/product'){
         res.end('This is the PRODUCT');
-    }else {
+    }else if (pathName === '/api'){
+
+        fs.readFile('${__dirname}/dev-data/data.json', 'utf-8', 
+        res.end('data');
+            
+
+    }
+    else {
         res.writeHead(404, {
             'Content-type': 'text/html'
             'my-own-header': 'hello-world'
@@ -49,7 +64,6 @@ const sever = http.createServer((req, res) => {
 server.listner(8000.'127.0.0.1', () => {
     console.log('Listening to requests on port 8000');
 });
-
 
 
 
