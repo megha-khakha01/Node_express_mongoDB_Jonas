@@ -41,13 +41,20 @@ const data = fs.readFileSync('${__dirname}/dev-data/data.json', 'utf-8');
 const sever = http.createServer((req, res) => {
     const pathName = req.url;
 
+
+    // Overview page
     if(pathName === '/' || pathName === '/overview'){
         res.end('This is the OVERVIEW');
+
+    // Product Page
     }else if (pathName === '/product'){
         res.end('This is the PRODUCT');
+    // API  
     }else if (pathName === '/api'){
       res.writeHead(200,{'Content-type': application/json});
             res.end(data);
+
+    // Not Found
     }
     else {
         res.writeHead(404, {
