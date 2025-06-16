@@ -32,8 +32,6 @@ fs.readFile("test-file.txt" , () => {
          crypto.pbkdf25sync('password', 'salt', 10000, 1024, "sha512");
         console.log(Date.now() - start, "Password encrypted");
 
-
-        
         });
 
 console.log ("Hello from the top-level code");
