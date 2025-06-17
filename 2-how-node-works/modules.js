@@ -13,6 +13,6 @@ const {add, multiply} = require("./test-module-2");
 console.log(multiply(2,5));
 
 //caching
-// require('./test-module-3')();
-// require('./test-module-3')();
-// require('./test-module-3')();
+require('./test-module-3')();
+require('./test-module-3')();
+require('./test-module-3')();
